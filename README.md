@@ -3,6 +3,7 @@
 ## IP adapter face
 
 ```bash
+git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus ./ComfyUI/custom_nodes/ComfyUI_IPAdapter_plus
 
 # clipvison vit-h encoder
 wget -P ComfyUI/models/clip_vision/ https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors
@@ -27,7 +28,7 @@ wget -P ComfyUI/models/loras/ https://huggingface.co/h94/IP-Adapter-FaceID/resol
 
 # sdxl faceid plus v2
 wget -P ComfyUI/models/ipadapter https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl.bin
-wget -P ComfyUI/models/loras/ ComfyUI/models/loras/https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl_lora.safetensors
+wget -P ComfyUI/models/loras/ https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl_lora.safetensors
 
 
 # sd1.5 portrait
@@ -35,5 +36,9 @@ wget -P ComfyUI/models/ipadapter https://huggingface.co/h94/IP-Adapter-FaceID/re
 
 
 # insightface
+apt-get update
+apt-get install -y build-essential
+pip install onnxruntime onnxruntime-gpu insightface
+
 pip install insightface
 ```
