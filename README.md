@@ -20,6 +20,9 @@ wget -p ComfyUI/models/ipadapter https://huggingface.co/h94/IP-Adapter/resolve/m
 # sd1.5 full face
 wget -p ComfyUI/models/ipadapter https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-full-face_sd15.safetensors
 
+# sdxl ipa vith
+wget -p ComfyUI/models/ipadapter https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter_sdxl_vit-h.safetensors
+
 # ----- faceID ----
 
 # sd1.5 faceid plus v2
