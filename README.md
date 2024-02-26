@@ -47,4 +47,28 @@ apt-get install -y build-essential
 pip install onnxruntime onnxruntime-gpu insightface
 
 pip install insightface
+
+
+
+# SAM
+git clone https://github.com/storyicon/comfyui_segment_anything ./ComfyUI/custom_nodes/comfyui_segment_anything
+cd comfyui_segment_anything && pip install -r requirements.txt
+
+cd ComfyUI/
+mkdir models/grounding-dino
+wget -P models/grounding-dino https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/groundingdino_swinb_cogcoor.pth
+wget -P models/grounding-dino https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/GroundingDINO_SwinB.cfg.py
+mkdir models/sams
+wget -P models/sams https://huggingface.co/lkeab/hq-sam/resolve/main/sam_hq_vit_h.pth
+
+
+
+# UPSCALE
+git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale --recursive ./ComfyUI/custom_nodes/ComfyUI_UltimateSDUpscale
+apt update && apt install git-lfs
+git lfs install
+cd models/controlnet
+git clone https://huggingface.co/lllyasviel/control_v11f1e_sd15_tile ComfyUI/models/controlnet
+wget -P ComfyUI/models/upscale_models https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth
+
 ```
