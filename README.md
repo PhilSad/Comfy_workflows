@@ -52,14 +52,11 @@ pip install insightface
 
 # SAM
 git clone https://github.com/storyicon/comfyui_segment_anything ./ComfyUI/custom_nodes/comfyui_segment_anything
-cd comfyui_segment_anything && pip install -r requirements.txt
-
-cd ComfyUI/
-mkdir models/grounding-dino
-wget -P models/grounding-dino https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/groundingdino_swinb_cogcoor.pth
-wget -P models/grounding-dino https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/GroundingDINO_SwinB.cfg.py
-mkdir models/sams
-wget -P models/sams https://huggingface.co/lkeab/hq-sam/resolve/main/sam_hq_vit_h.pth
+mkdir ComfyUI/models/grounding-dino
+wget -P ComfyUI/models/grounding-dino https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/groundingdino_swinb_cogcoor.pth
+wget -P ComfyUI/models/grounding-dino https://huggingface.co/ShilongLiu/GroundingDINO/resolve/main/GroundingDINO_SwinB.cfg.py
+mkdir ComfyUI/models/sams
+wget -P ComfyUI/models/sams https://huggingface.co/lkeab/hq-sam/resolve/main/sam_hq_vit_h.pth
 
 
 
@@ -67,8 +64,7 @@ wget -P models/sams https://huggingface.co/lkeab/hq-sam/resolve/main/sam_hq_vit_
 git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale --recursive ./ComfyUI/custom_nodes/ComfyUI_UltimateSDUpscale
 apt update && apt install git-lfs
 git lfs install
-cd models/controlnet
-git clone https://huggingface.co/lllyasviel/control_v11f1e_sd15_tile ComfyUI/models/controlnet
+git clone https://huggingface.co/lllyasviel/control_v11f1e_sd15_tile ComfyUI/models/controlnet/control_v11f1e_sd15_tile
 wget -P ComfyUI/models/upscale_models https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth
 
 ```
