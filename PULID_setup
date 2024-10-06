@@ -16,6 +16,7 @@ pip install -r custom_nodes/ComfyUI-GGUF/requirements.txt
 pip install -r custom_nodes/ComfyUI-PuLID-Flux/requirements.txt
 pip install facexlib
 pip install insightface
+pip install sentencepiece
 
 mkdir models/insightface
 wget https://huggingface.co/MonsterMMORPG/tools/resolve/main/antelopev2.zip -P models/insightface
