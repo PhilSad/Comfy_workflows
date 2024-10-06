@@ -5,6 +5,7 @@ wget https://huggingface.co/city96/FLUX.1-dev-gguf/resolve/main/flux1-dev-Q8_0.g
 wget https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q8_0.gguf -P models/clip/
 wget https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors -P models/clip
 wget https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors -P models/vae
+wget https://huggingface.co/QuanSun/EVA-CLIP/blob/main/EVA02_CLIP_L_336_psz14_s6B.pt -P models/clip
 
 mkdir models/pulid/
 wget https://huggingface.co/guozinan/PuLID/resolve/main/pulid_flux_v0.9.0.safetensors -P models/pulid
@@ -12,14 +13,24 @@ wget https://huggingface.co/guozinan/PuLID/resolve/main/pulid_flux_v0.9.0.safete
 apt update && apt install -y python3-dev build-essential
 git clone https://github.com/city96/ComfyUI-GGUF custom_nodes/ComfyUI-GGUF
 git clone https://github.com/balazik/ComfyUI-PuLID-Flux.git custom_nodes/ComfyUI-PuLID-Flux
+git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack custom_nodes/ComfyUI-Impact-Pack
 pip install -r custom_nodes/ComfyUI-GGUF/requirements.txt
 pip install -r custom_nodes/ComfyUI-PuLID-Flux/requirements.txt
+pip install -r custom_nodes/ComfyUI-Impact-Pack/requirements.txt
 pip install facexlib
 pip install insightface
+pip install spandrel
 pip install sentencepiece
 
 mkdir models/insightface
 wget https://huggingface.co/MonsterMMORPG/tools/resolve/main/antelopev2.zip -P models/insightface
 apt install -y zip
 unzip models/insightface/antelopev2.zip -d models/insightface
+
+
+# upscampling
+
+git clone https://github.com/BlenderNeko/ComfyUI_TiledKSampler custom_nodes/ComfyUI_TiledKSampler
+wget https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x4.pth -P models/upscale_models/
+wget https://huggingface.co/Lykon/DreamShaper/resolve/main/DreamShaper_8_pruned.safetensors -P models/checkpoints
 ```
